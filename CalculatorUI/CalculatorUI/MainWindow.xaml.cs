@@ -27,24 +27,8 @@ namespace CalculatorUI
 
 		private void NumberOrOperationButtonClick(object sender, RoutedEventArgs e)
 		{
-
-			if (outPutField.Text == "Press...")
-			{
-				outPutField.Text = "";
 				Button bufferButton = (Button)sender;
 				outPutField.Text += bufferButton.Content.ToString();
-			}
-
-			else if (outPutField.Text == "")
-			{
-				outPutField.Text = "Press...";
-			}
-			else
-			{
-				Button bufferButton = (Button)sender;
-				outPutField.Text += bufferButton.Content.ToString();
-			}
-
 		}
 
 		private void EquallyClick(object sender, RoutedEventArgs e)
@@ -104,7 +88,7 @@ namespace CalculatorUI
 			{
 				outPutField.Text += "=" + (op1 - op2);
 			}
-			else if (oprationString == "*")
+			else if (oprationString == "X")
 			{
 				outPutField.Text += "=" + (op1 * op2);
 			}
