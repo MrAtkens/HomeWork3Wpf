@@ -1,0 +1,76 @@
+﻿<Window x:Class="CalculatorUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CalculatorUI"
+        mc:Ignorable="d"
+        Title="MainWindow" MinHeight="500" Height="500" MinWidth="400" Width="400">
+
+	<Window.Resources>
+		<Style x:Key="CalculatorButtonNumbers">
+			<Setter Property="Control.FontFamily" Value="Segoe UI" />
+			<Setter Property="Control.Background" Value="#2E303C" />
+			<Setter Property="Control.Foreground" Value="White" />
+			<Setter Property="Control.FontSize" Value="24" />
+			<Setter Property="Control.BorderThickness" Value="0" />
+		</Style>
+
+		<Style x:Key="CalculatorButtonOperations">
+			<Setter Property="Control.FontFamily" Value="Segoe UI" />
+			<Setter Property="Control.Background" Value="#363C52" />
+			<Setter Property="Control.Foreground" Value="White" />
+			<Setter Property="Control.FontSize" Value="24" />
+			<Setter Property="Control.BorderThickness" Value="0" />
+		</Style>
+	</Window.Resources>
+	
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="90*"/>
+			<RowDefinition Height="329*"/>
+		</Grid.RowDefinitions>
+		<UniformGrid Grid.Row="0">
+			<TextBlock x:Name="outPutField" FontFamily="Segoe UI" FontSize="48	"/>
+		</UniformGrid>
+		
+		<UniformGrid Grid.Row="1" Rows="5" Columns="4">
+
+			<Button Style="{StaticResource CalculatorButtonOperations}" Click="ButtonDeleteAllClick">CE</Button>
+
+			<Button Style="{StaticResource CalculatorButtonOperations}" Click="ButtonDeleteClick">R</Button>
+			<Button Style="{StaticResource CalculatorButtonOperations}" Click="NumberOrOperationButtonClick">%</Button>
+			<Button Style="{StaticResource CalculatorButtonOperations}" Click="NumberOrOperationButtonClick">/</Button>
+
+
+			<Button Style="{StaticResource CalculatorButtonNumbers}" Click="NumberOrOperationButtonClick">7</Button>
+			<Button Style="{StaticResource CalculatorButtonNumbers}" Click="NumberOrOperationButtonClick">8</Button>
+			<Button Style="{StaticResource CalculatorButtonNumbers}" Click="NumberOrOperationButtonClick">9</Button>
+			<Button Style="{StaticResource CalculatorButtonOperations}" Click="NumberOrOperationButtonClick">X</Button>
+
+
+
+
+			<Button Style="{StaticResource CalculatorButtonNumbers}" Click="NumberOrOperationButtonClick">4</Button>
+			<Button Style="{StaticResource CalculatorButtonNumbers}" Click="NumberOrOperationButtonClick">5</Button>
+			<Button Style="{StaticResource CalculatorButtonNumbers}" Click="NumberOrOperationButtonClick">6</Button>
+			<Button Style="{StaticResource CalculatorButtonOperations}" Click="NumberOrOperationButtonClick">+</Button>
+
+
+
+
+
+			<Button Style="{StaticResource CalculatorButtonNumbers}" Click="NumberOrOperationButtonClick">1</Button>
+			<Button Style="{StaticResource CalculatorButtonNumbers}" Click="NumberOrOperationButtonClick">2</Button>
+			<Button Style="{StaticResource CalculatorButtonNumbers}" Click="NumberOrOperationButtonClick">3</Button>
+			<Button Style="{StaticResource CalculatorButtonOperations}" Click="NumberOrOperationButtonClick">-</Button>
+
+			<Button Style="{StaticResource CalculatorButtonNumbers}" Click="NumberOrOperationButtonClick">.</Button>
+			<Button Style="{StaticResource CalculatorButtonNumbers}" Click="NumberOrOperationButtonClick">0</Button>
+			<Button Style="{StaticResource CalculatorButtonNumbers}" Click="NumberOrOperationButtonClick">√</Button>
+			<Button Style="{StaticResource CalculatorButtonNumbers}" Background="#F29715" Click="EquallyClick" >=</Button>
+			
+			
+		</UniformGrid>
+	</Grid>
+</Window>
